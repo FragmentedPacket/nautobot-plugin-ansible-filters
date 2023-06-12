@@ -1,10 +1,6 @@
 """Plugin declaration for ansible_filters."""
 # Metadata is inherited from Nautobot. If not including Nautobot in the environment, this should be added
-try:
-    from importlib import metadata
-except ImportError:
-    # Python version < 3.8
-    import importlib_metadata as metadata
+from importlib import metadata
 
 __version__ = metadata.version(__name__)
 
@@ -16,11 +12,11 @@ from ansible.plugins.loader import filter_loader
 class AnsibleFiltersConfig(PluginConfig):
     """Plugin configuration for the ansible_filters plugin."""
 
-    name = "ansible_filters"
-    verbose_name = "Ansible Filters"
+    name = "nautobot_ansible_filters"
+    verbose_name = "Nautobot Ansible Filters"
     version = __version__
     author = "Mikhail Yohman"
-    description = "Ansible Filters."
+    description = "Nautobot plugin to include Ansible built-in Jinja filters."
     base_url = "ansible-filters"
     required_settings = []
     min_version = "1.2.0"

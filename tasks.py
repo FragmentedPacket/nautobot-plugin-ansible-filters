@@ -38,7 +38,7 @@ namespace = Collection("ansible_filters")
 namespace.configure(
     {
         "ansible_filters": {
-            "nautobot_ver": "latest",
+            "nautobot_ver": "1.4",
             "project_name": "ansible_filters",
             "python_ver": "3.10",
             "local": False,
@@ -323,7 +323,7 @@ def hadolint(context):
 @task
 def pylint(context):
     """Run pylint code analysis."""
-    command = 'pylint --init-hook "import nautobot; nautobot.setup()" --rcfile pyproject.toml ansible_filters'
+    command = 'pylint --init-hook "import nautobot; nautobot.setup()" --rcfile pyproject.toml nautobot_ansible_filters'
     run_command(context, command)
 
 
@@ -369,7 +369,7 @@ def check_migrations(context):
         "buffer": "Discard output from passing tests",
     }
 )
-def unittest(context, keepdb=False, label="ansible_filters", failfast=False, buffer=True):
+def unittest(context, keepdb=False, label="nautobot_ansible_filters", failfast=False, buffer=True):
     """Run Nautobot unit tests."""
     command = f"coverage run --module nautobot.core.cli test {label}"
 
@@ -385,7 +385,7 @@ def unittest(context, keepdb=False, label="ansible_filters", failfast=False, buf
 @task
 def unittest_coverage(context):
     """Report on code test coverage as measured by 'invoke unittest'."""
-    command = "coverage report --skip-covered --include 'ansible_filters/*' --omit *migrations*"
+    command = "coverage report --skip-covered --include 'nautobot_ansible_filters/*' --omit *migrations*"
 
     run_command(context, command)
 

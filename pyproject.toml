@@ -13,7 +13,7 @@ include = [
     "README.md",
 ]
 packages = [
-    { include = "ansible_filters" },
+    { include = "nautobot_ansible_filters" },
 ]
 
 [tool.poetry.dependencies]

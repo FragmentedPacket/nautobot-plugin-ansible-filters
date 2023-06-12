@@ -11,12 +11,17 @@ class AppConfigReadyTest(TestCase):
 
     def setUp(self):
         """Initiate the app config for all tests."""
-        self.app_config = apps.get_app_config("ansible_filters")
+        self.app_config = apps.get_app_config("nautobot_ansible_filters")
         self.ansible_filters = {f.ansible_name for f in filter_loader.all()}
 
     def test_app_config_ready_templates_exist(self):
         """Verify ALL ansible-core filters are loaded properly within app_config.ready()."""
         self.app_config.ready()
         self.assertEqual(
-            self.ansible_filters, {filter for filter in library._local_env["filters"] if "ansible" in filter}
-        )  # noqa
+            self.ansible_filters,
+            {
+                filter
+                for filter in library._local_env["filters"]  # pylint: disable=protected-access
+                if "ansible" in filter
+            },
+        )
