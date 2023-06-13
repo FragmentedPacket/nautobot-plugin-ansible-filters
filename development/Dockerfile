@@ -1,4 +1,4 @@
-ARG NAUTOBOT_VER
+ARG NAUTOBOT_VER=latest
 ARG PYTHON_VER=3.8
 FROM ghcr.io/nautobot/nautobot-dev:${NAUTOBOT_VER}-py${PYTHON_VER}
 
