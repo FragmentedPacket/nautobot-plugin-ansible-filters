@@ -81,7 +81,6 @@ jobs:
     env:
       INVOKE_ANSIBLE_FILTERS_PYTHON_VER: "${{ matrix.python-version }}"
       INVOKE_ANSIBLE_FILTERS_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
-      INVOKE_ANSIBLE_FILTERS_LOCAL: "True"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v2"
