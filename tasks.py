@@ -38,7 +38,7 @@ namespace = Collection("ansible_filters")
 namespace.configure(
     {
         "ansible_filters": {
-            "nautobot_ver": "1.4",
+            "nautobot_ver": "latest",
             "project_name": "ansible_filters",
             "python_ver": "3.10",
             "local": False,
