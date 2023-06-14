@@ -26,7 +26,14 @@ class AnsibleFiltersConfig(PluginConfig):
 
     def ready(self):
         for filter_plugin in filter_loader.all():
-            library.filter(fn=filter_plugin.j2_function, name=filter_plugin.ansible_name)
+            # Handle <2.14 that passes the FilterModule back that requires us to iterate over filters to add them.
+            if not hasattr(filter_plugin, "j2_function") and hasattr(filter_plugin, "filters"):
+                for filter_name, filter_func in filter_plugin.filters().items():
+                    library.filter(name=filter_name, fn=filter_func)
+                continue
+
+            # If it's ansible-core >2.14 then we can add using this method.
+            library.filter(name=filter_plugin.ansible_name, fn=filter_plugin.j2_function)
 
 
 config = AnsibleFiltersConfig  # pylint:disable=invalid-name
