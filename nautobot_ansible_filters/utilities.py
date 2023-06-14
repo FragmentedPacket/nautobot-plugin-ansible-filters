@@ -16,6 +16,6 @@ def gather_filter_plugins():
             continue
 
         # This handles ansible-core >=2.14
-        found_filters[filter_plugin.ansible_name] = filter_plugin.filter_func
+        found_filters[filter_plugin.ansible_name] = filter_plugin.j2_function
 
     return found_filters
