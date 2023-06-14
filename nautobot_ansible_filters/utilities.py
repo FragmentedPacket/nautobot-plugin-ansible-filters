@@ -12,7 +12,7 @@ def gather_filter_plugins():
                 if "ansible" not in filter_name:
                     filter_name = f"ansible.builtin.{filter_name}"
                 found_filters[filter_name] = filter_func
-            # Continuing  the outer loop since we processed the filters passed in for this filter module.
+            # Continuing  the outer loop since we processed the filters passed in for this filter plugin.
             continue
 
         # This handles ansible-core >=2.14

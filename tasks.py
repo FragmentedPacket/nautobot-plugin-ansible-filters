@@ -400,6 +400,7 @@ def tests(context, failfast=False):
     # If we are not running locally, start the docker containers so we don't have to for each test
     if not is_truthy(context.ansible_filters.local):
         print("Starting Docker Containers...")
+        build(context)
         start(context)
     # Sorted loosely from fastest to slowest
     print("Running black...")

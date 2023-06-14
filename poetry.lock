@@ -44,25 +44,6 @@ PyYAML = ">=5.1"
 resolvelib = ">=0.5.3,<0.9.0"
 
 [[package]]
-name = "ansible-core"
-version = "2.15.0"
-description = "Radically simple IT automation"
-optional = false
-python-versions = ">=3.9"
-files = [
-    {file = "ansible-core-2.15.0.tar.gz", hash = "sha256:cf690fd4ebb40590e00c5acdc0624758ca4c58d1e4b2b02ec026a034070ebf4d"},
-    {file = "ansible_core-2.15.0-py3-none-any.whl", hash = "sha256:723ef347b55ac48bb70951124d0b1e71d799cf7488924d484c3e88aaf9a8c14c"},
-]
-
-[package.dependencies]
-cryptography = "*"
-importlib-resources = {version = ">=5.0,<5.1", markers = "python_version < \"3.10\""}
-jinja2 = ">=3.0.0"
-packaging = "*"
-PyYAML = ">=5.1"
-resolvelib = ">=0.5.3,<1.1.0"
-
-[[package]]
 name = "appnope"
 version = "0.1.3"
 description = "Disable App Nap on macOS >= 10.9"
@@ -1463,21 +1444,6 @@ testing = ["flake8 (<5)", "flufl.flake8", "importlib-resources (>=1.3)", "packag
 
 [[package]]
 name = "importlib-resources"
-version = "5.0.7"
-description = "Read resources from Python packages"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "importlib_resources-5.0.7-py3-none-any.whl", hash = "sha256:2238159eb743bd85304a16e0536048b3e991c531d1cd51c4a834d1ccf2829057"},
-    {file = "importlib_resources-5.0.7.tar.gz", hash = "sha256:4df460394562b4581bb4e4087ad9447bd433148fba44241754ec3152499f1d1b"},
-]
-
-[package.extras]
-docs = ["jaraco.packaging (>=8.2)", "rst.linker (>=1.9)", "sphinx"]
-testing = ["pytest (>=3.5,!=3.7.3)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=1.2.3)", "pytest-cov", "pytest-enabler", "pytest-flake8", "pytest-mypy"]
-
-[[package]]
-name = "importlib-resources"
 version = "5.12.0"
 description = "Read resources from Python packages"
 optional = true
@@ -1748,13 +1714,13 @@ testing = ["coverage", "pyyaml"]
 
 [[package]]
 name = "markdown-it-py"
-version = "2.2.0"
+version = "3.0.0"
 description = "Python port of markdown-it. Markdown parsing, done right!"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "markdown-it-py-2.2.0.tar.gz", hash = "sha256:7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"},
-    {file = "markdown_it_py-2.2.0-py3-none-any.whl", hash = "sha256:5a35f8d1870171d9acc47b99612dc146129b631baf04970128b568f190d0cc30"},
+    {file = "markdown-it-py-3.0.0.tar.gz", hash = "sha256:e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"},
+    {file = "markdown_it_py-3.0.0-py3-none-any.whl", hash = "sha256:355216845c60bd96232cd8d8c40e8f9765cc86f46880e43a8fd22dc1a1a8cab1"},
 ]
 
 [package.dependencies]
@@ -1767,7 +1733,7 @@ compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0
 linkify = ["linkify-it-py (>=1,<3)"]
 plugins = ["mdit-py-plugins"]
 profiling = ["gprof2dot"]
-rtd = ["attrs", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx_book_theme"]
+rtd = ["jupyter_sphinx", "mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx_book_theme"]
 testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
@@ -2820,35 +2786,18 @@ release = ["build", "towncrier", "twine"]
 test = ["commentjson", "packaging", "pytest"]
 
 [[package]]
-name = "resolvelib"
-version = "1.0.1"
-description = "Resolve abstract dependencies into concrete ones"
-optional = false
-python-versions = "*"
-files = [
-    {file = "resolvelib-1.0.1-py2.py3-none-any.whl", hash = "sha256:d2da45d1a8dfee81bdd591647783e340ef3bcb104b54c383f70d422ef5cc7dbf"},
-    {file = "resolvelib-1.0.1.tar.gz", hash = "sha256:04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309"},
-]
-
-[package.extras]
-examples = ["html5lib", "packaging", "pygraphviz", "requests"]
-lint = ["black", "flake8", "isort", "mypy", "types-requests"]
-release = ["build", "towncrier", "twine"]
-test = ["commentjson", "packaging", "pytest"]
-
-[[package]]
 name = "rich"
-version = "13.4.1"
+version = "13.4.2"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "rich-13.4.1-py3-none-any.whl", hash = "sha256:d204aadb50b936bf6b1a695385429d192bc1fdaf3e8b907e8e26f4c4e4b5bf75"},
-    {file = "rich-13.4.1.tar.gz", hash = "sha256:76f6b65ea7e5c5d924ba80e322231d7cb5b5981aa60bfc1e694f1bc097fe6fe1"},
+    {file = "rich-13.4.2-py3-none-any.whl", hash = "sha256:8f87bc7ee54675732fa66a05ebfe489e27264caeeff3728c945d25971b6485ec"},
+    {file = "rich-13.4.2.tar.gz", hash = "sha256:d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"},
 ]
 
 [package.dependencies]
-markdown-it-py = ">=2.2.0,<3.0.0"
+markdown-it-py = ">=2.2.0"
 pygments = ">=2.13.0,<3.0.0"
 typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.9\""}
 
@@ -3402,4 +3351,4 @@ nautobot = ["nautobot"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "109b27853ec5a19cb359b96c48f0680f3b733633b62617f6f25eba37cd9624d4"
+content-hash = "f587df7c74a97b3d81cb944a3948496d0d667df333e8b7774ec19c56f070fd4c"
