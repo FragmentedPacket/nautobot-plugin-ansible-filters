@@ -323,7 +323,7 @@ def hadolint(context):
 @task
 def pylint(context):
     """Run pylint code analysis."""
-    command = 'pylint --init-hook "import nautobot; nautobot.setup()" --rcfile pyproject.toml ansible_filters'
+    command = 'pylint --init-hook "import nautobot; nautobot.setup()" --rcfile pyproject.toml nautobot_ansible_filters'
     run_command(context, command)
 
 
@@ -369,7 +369,7 @@ def check_migrations(context):
         "buffer": "Discard output from passing tests",
     }
 )
-def unittest(context, keepdb=False, label="ansible_filters", failfast=False, buffer=True):
+def unittest(context, keepdb=False, label="nautobot_ansible_filters", failfast=False, buffer=True):
     """Run Nautobot unit tests."""
     command = f"coverage run --module nautobot.core.cli test {label}"
 
@@ -385,7 +385,7 @@ def unittest(context, keepdb=False, label="ansible_filters", failfast=False, buf
 @task
 def unittest_coverage(context):
     """Report on code test coverage as measured by 'invoke unittest'."""
-    command = "coverage report --skip-covered --include 'ansible_filters/*' --omit *migrations*"
+    command = "coverage report --skip-covered --include 'nautobot_ansible_filters/*' --omit *migrations*"
 
     run_command(context, command)
 
@@ -400,6 +400,7 @@ def tests(context, failfast=False):
     # If we are not running locally, start the docker containers so we don't have to for each test
     if not is_truthy(context.ansible_filters.local):
         print("Starting Docker Containers...")
+        build(context)
         start(context)
     # Sorted loosely from fastest to slowest
     print("Running black...")

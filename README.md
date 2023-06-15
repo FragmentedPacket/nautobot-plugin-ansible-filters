@@ -10,25 +10,19 @@ The plugin is available as a Python package in pypi and can be installed with pi
 pip install nautobo-ansible-filters
 ```
 
-> The plugin is compatible with Nautobot 1.4.0 and higher
+> The plugin is compatible with Nautobot 1.2.0 and higher
 
-To ensure Ansible Filters is automatically re-installed during future upgrades, create a file named `local_requirements.txt` (if not already existing) in the Nautobot root directory (alongside `requirements.txt`) and list the `ansible-filters` package:
+To ensure Ansible Filters is automatically re-installed during future upgrades, create a file named `local_requirements.txt` (if not already existing) in the Nautobot root directory (alongside `requirements.txt`) and list the `nautobot-ansible-filters` package:
 
 ```no-highlight
-# echo ansible-filters >> local_requirements.txt
+# echo nautobot-ansible-filters >> local_requirements.txt
 ```
 
 Once installed, the plugin needs to be enabled in your `nautobot_config.py`
 
 ```python
 # In your nautobot_config.py
-PLUGINS = ["ansible_filters"]
-
-# PLUGINS_CONFIG = {
-#   "ansible_filters": {
-#     ADD YOUR SETTINGS HERE
-#   }
-# }
+PLUGINS = ["nautobot_ansible_filters"]
 ```
 
 The plugin behavior can be controlled with the following list of settings

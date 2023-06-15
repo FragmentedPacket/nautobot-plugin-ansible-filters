@@ -3,7 +3,7 @@ from django.apps import apps
 from django.test import TestCase
 
 from django_jinja import library
-from ansible.plugins.loader import filter_loader
+from nautobot_ansible_filters.utilities import gather_filter_plugins
 
 
 class AppConfigReadyTest(TestCase):
@@ -11,12 +11,18 @@ class AppConfigReadyTest(TestCase):
 
     def setUp(self):
         """Initiate the app config for all tests."""
-        self.app_config = apps.get_app_config("ansible_filters")
-        self.ansible_filters = {f.ansible_name for f in filter_loader.all()}
+        self.app_config = apps.get_app_config("nautobot_ansible_filters")
+        self.found_filters = set(gather_filter_plugins())
 
     def test_app_config_ready_templates_exist(self):
         """Verify ALL ansible-core filters are loaded properly within app_config.ready()."""
         self.app_config.ready()
+        django_filters = {
+            filter
+            for filter in library._local_env["filters"]  # pylint: disable=protected-access
+            if "ansible" in filter
+        }
         self.assertEqual(
-            self.ansible_filters, {filter for filter in library._local_env["filters"] if "ansible" in filter}
-        )  # noqa
+            self.found_filters,
+            django_filters,
+        )
