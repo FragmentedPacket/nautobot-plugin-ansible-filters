@@ -5,8 +5,6 @@ from importlib import metadata
 __version__ = metadata.version(__name__)
 
 from nautobot.extras.plugins import PluginConfig
-from django_jinja import library
-from nautobot_ansible_filters.utilities import gather_filter_plugins
 
 
 class AnsibleFiltersConfig(PluginConfig):
@@ -23,10 +21,6 @@ class AnsibleFiltersConfig(PluginConfig):
     max_version = "1.9999"
     default_settings = {}
     caching_config = {}
-
-    def ready(self):
-        for filter_name, filter_func in gather_filter_plugins().items():
-            library.filter(name=filter_name, fn=filter_func)
 
 
 config = AnsibleFiltersConfig  # pylint:disable=invalid-name
