@@ -12,7 +12,7 @@ from nautobot.core.settings_funcs import parse_redis_connection
 #
 
 ALLOWED_HOSTS = os.getenv("NAUTOBOT_ALLOWED_HOSTS", "").split(" ")
-SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY", "")
+SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY", "+$_kw69oq&fbkfk6&q-+ksbgzw1&061ghw%420u3(wen54w(m")
 
 
 nautobot_db_engine = os.getenv("NAUTOBOT_DB_ENGINE", "django.db.backends.postgresql")
@@ -132,7 +132,7 @@ CACHEOPS_REDIS = parse_redis_connection(redis_database=1)
 #
 
 # Enable installed plugins. Add the name of each plugin to the list.
-PLUGINS = ["ansible_filters"]
+PLUGINS = ["nautobot_ansible_filters"]
 
 # Plugins configuration settings. These settings are used by various plugins that the user may have installed.
 # Each key in the dictionary is the name of an installed plugin and its value is a dictionary of settings.

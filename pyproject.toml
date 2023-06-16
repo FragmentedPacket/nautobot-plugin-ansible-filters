@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nautobot-ansible-filters"
-version = "0.1.0"
+version = "1.0.0"
 description = "Nautobot App for environment supported ansible-core filters."
 authors = ["Mikhail Yohman <mikhail.yohman@gmail.com>"]
 license = "Apache-2.0"
@@ -13,17 +13,15 @@ include = [
     "README.md",
 ]
 packages = [
-    { include = "ansible_filters" },
+    { include = "nautobot_ansible_filters" },
 ]
 
 [tool.poetry.dependencies]
 # Used for local development
-nautobot = { version = "^1.5.0", optional = true }
 python = "^3.8"
-ansible-core = [
-    { version = "^2.14", python = ">=3.9" },
-    { version = "^2.11", python = ">=3.8" },
-]
+# Pinning to anything above 1.5.16 due to causing pylint to fail as it attempts to connect to DB
+nautobot = { version = "1.5.21", optional = true }
+ansible-core = "^2.11"
 
 [tool.poetry.dev-dependencies]
 bandit = "*"
