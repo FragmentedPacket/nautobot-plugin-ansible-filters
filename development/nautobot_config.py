@@ -12,7 +12,7 @@ from nautobot.core.settings_funcs import parse_redis_connection
 #
 
 ALLOWED_HOSTS = os.getenv("NAUTOBOT_ALLOWED_HOSTS", "").split(" ")
-SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY", "")
+SECRET_KEY = os.getenv("NAUTOBOT_SECRET_KEY", "+$_kw69oq&fbkfk6&q-+ksbgzw1&061ghw%420u3(wen54w(m")
 
 
 nautobot_db_engine = os.getenv("NAUTOBOT_DB_ENGINE", "django.db.backends.postgresql")
