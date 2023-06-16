@@ -18,8 +18,9 @@ packages = [
 
 [tool.poetry.dependencies]
 # Used for local development
-nautobot = { version = "^1.5.0", optional = true }
 python = "^3.8"
+# Pinning to anything above 1.5.16 due to causing pylint to fail as it attempts to connect to DB
+nautobot = { version = "1.5.21", optional = true }
 ansible-core = "^2.11"
 
 [tool.poetry.dev-dependencies]

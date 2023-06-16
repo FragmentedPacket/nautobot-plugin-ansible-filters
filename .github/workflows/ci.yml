@@ -87,7 +87,7 @@ jobs:
       - name: "Setup environment"
         uses: "networktocode/gh-action-setup-poetry-environment@v5"
         with:
-          poetry-install-options: "--with dev --extras nautobot"
+          poetry-install-options: "--with dev -E nautobot"
       - name: "Copy credentials"
         run: "cp development/creds.example.env development/creds.env"
       - name: "Linting: pylint"
