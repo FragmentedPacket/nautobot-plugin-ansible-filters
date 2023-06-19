@@ -38,8 +38,8 @@ namespace = Collection("ansible_filters")
 namespace.configure(
     {
         "ansible_filters": {
-            "nautobot_ver": "latest",
             "project_name": "ansible_filters",
+            "nautobot_ver": "latest",
             "python_ver": "3.10",
             "local": False,
             "compose_dir": os.path.join(os.path.dirname(__file__), "development"),
