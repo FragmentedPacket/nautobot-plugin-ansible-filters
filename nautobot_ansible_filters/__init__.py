@@ -1,6 +1,10 @@
 """Plugin declaration for ansible_filters."""
 # Metadata is inherited from Nautobot. If not including Nautobot in the environment, this should be added
-from importlib import metadata
+try:
+    from importlib import metadata
+except ImportError:
+    # Python version < 3.8
+    import importlib_metadata as metadata
 
 __version__ = metadata.version(__name__)
 

@@ -17,11 +17,14 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-# Used for local development
-python = "^3.8"
+python = "^3.7"
+
 # Pinning to anything above 1.5.16 due to causing pylint to fail as it attempts to connect to DB
 nautobot = { version = "1.5.21", optional = true }
-ansible-core = "^2.11"
+
+# importlib.metadata has an API change in 3.10 and is no longer provisional
+importlib-metadata = { version = "^4", python = "<3.10" }
+jinja2-ansible-filters = "^1.3"
 
 [tool.poetry.dev-dependencies]
 bandit = "*"
