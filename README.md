@@ -1,10 +1,10 @@
 # Ansible Filters
 
-A plugin for [Nautobot](https://github.com/nautobot/nautobot).
+A plugin for [Nautobot](https://github.com/nautobot/nautobot) that incorporates Ansible filters via the [jinj2_ansible_filters](https://gitlab.com/dreamer-labs/libraries/jinja2-ansible-filters) package.
 
 ## Installation
 
-The plugin is available as a Python package in pypi and can be installed with pip
+The plugin is available as a Python package in pypi and can be installed with pip.
 
 ```shell
 pip install nautobot-ansible-filters
@@ -24,8 +24,6 @@ Once installed, the plugin needs to be enabled in your `nautobot_config.py`
 # In your nautobot_config.py
 PLUGINS = ["nautobot_ansible_filters"]
 ```
-
-The plugin behavior can be controlled with the following list of settings
 
 ## Usage
 
@@ -81,7 +79,7 @@ Once you have Poetry and Docker installed you can run the following commands to 
 ```shell
 poetry shell
 poetry install
-invoke start
+invoke build start
 ```
 
 Nautobot server can now be accessed at [http://localhost:8080](http://localhost:8080).
