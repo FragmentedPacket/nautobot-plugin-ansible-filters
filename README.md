@@ -37,8 +37,6 @@ Here is what the computed field would look like on a site called **DEN01**.
 
 ![site](docs/images/regex_replace_site.png)
 
-> NOTE: The available filters will depend on the version of Ansible core that is installed.
-
 ## Contributing
 
 Pull requests are welcomed and automatically built and tested against multiple version of Python and multiple version of Nautobot through TravisCI.
