@@ -1,15 +1,13 @@
 [tool.poetry]
 name = "nautobot-ansible-filters"
-version = "1.0.0"
-description = "Nautobot App for environment supported ansible-core filters."
+version = "1.0.1"
+description = "Nautobot App that provides Ansible filters within Nautobot."
 authors = ["Mikhail Yohman <mikhail.yohman@gmail.com>"]
-license = "Apache-2.0"
 readme = "README.md"
 homepage = "https://github.com/FragmentedPacket/nautobot-plugin-ansible-filters"
 repository = "https://github.com/FragmentedPacket/nautobot-plugin-ansible-filters"
 keywords = ["nautobot", "nautobot-plugin"]
 include = [
-    "LICENSE",
     "README.md",
 ]
 packages = [
