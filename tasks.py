@@ -40,7 +40,7 @@ namespace.configure(
         "ansible_filters": {
             "project_name": "ansible_filters",
             "nautobot_ver": "latest",
-            "python_ver": "3.11",
+            "python_ver": "3.8",
             "local": False,
             "compose_dir": os.path.join(os.path.dirname(__file__), "development"),
             "compose_files": [
