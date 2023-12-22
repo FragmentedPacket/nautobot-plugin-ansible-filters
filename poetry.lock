@@ -1813,13 +1813,13 @@ files = [
 
 [[package]]
 name = "nautobot"
-version = "1.6.7"
+version = "1.6.8"
 description = "Source of truth and network automation platform."
 optional = true
 python-versions = ">=3.8,<3.12"
 files = [
-    {file = "nautobot-1.6.7-py3-none-any.whl", hash = "sha256:f13bff06128115855b16905e0d2194ecfd9c679f70346806a0ef125b1f8b724b"},
-    {file = "nautobot-1.6.7.tar.gz", hash = "sha256:97106733bcb521a668267515bbc7db462b1be78f60bff219ef6e8f86a91eb3f1"},
+    {file = "nautobot-1.6.8-py3-none-any.whl", hash = "sha256:6e8b350d01021a88f58bec971093f57b1ed793f74e3a139cd6b20e04d11afc42"},
+    {file = "nautobot-1.6.8.tar.gz", hash = "sha256:664d1f2bc1ff466007f047e89c82659b6b7e9d1d1a63758de73cfcd3a0c791e7"},
 ]
 
 [package.dependencies]
