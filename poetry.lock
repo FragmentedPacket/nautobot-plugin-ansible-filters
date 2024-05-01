@@ -1865,13 +1865,13 @@ files = [
 
 [[package]]
 name = "nautobot"
-version = "1.6.16"
+version = "1.6.20"
 description = "Source of truth and network automation platform."
 optional = true
 python-versions = "<3.12,>=3.8"
 files = [
-    {file = "nautobot-1.6.16-py3-none-any.whl", hash = "sha256:c21a86398f0fc2ce1e8f9d05ec90e75baefaed05b92754e5f8c5a6d5c811ff62"},
-    {file = "nautobot-1.6.16.tar.gz", hash = "sha256:53ca1feca2642562c54c1853b2dd724704141e47f8799df61143c6ac00337a6e"},
+    {file = "nautobot-1.6.20-py3-none-any.whl", hash = "sha256:a77b1f83a550bdf4ca2f0988beee79485be1bc86a18c16daddcf41438d13fffd"},
+    {file = "nautobot-1.6.20.tar.gz", hash = "sha256:32e6a7629535ea7d0ea7d52e296b3289f824a36780ba49cd186c001fc7a80309"},
 ]
 
 [package.dependencies]
@@ -1905,7 +1905,7 @@ GitPython = ">=3.1.41,<3.2.0"
 graphene-django = ">=2.16.0,<2.17.0"
 graphene-django-optimizer = ">=0.8.0,<0.9.0"
 Jinja2 = ">=3.1.3,<3.2.0"
-jsonschema = ">=4.7.0,<4.18.0"
+jsonschema = ">=4.7.0,<5.0.0"
 Markdown = ">=3.3.7,<3.4.0"
 MarkupSafe = ">=2.1.3,<2.2.0"
 netaddr = ">=0.8.0,<0.9.0"
@@ -1922,12 +1922,12 @@ svgwrite = ">=1.4.2,<1.5.0"
 toml = ">=0.10.2,<0.11.0"
 
 [package.extras]
-all = ["django-auth-ldap (>=4.3.0,<4.4.0)", "django-storages (>=1.13.2,<1.14.0)", "mysqlclient (>=2.2.0,<2.3.0)", "napalm (>=4.1.0,<4.2.0)", "social-auth-core[openidconnect,saml] (>=4.4.2,<4.5.0)"]
+all = ["django-auth-ldap (>=4.3.0,<4.4.0)", "django-storages (>=1.13.2,<1.14.0)", "mysqlclient (>=2.2.0,<2.3.0)", "napalm (>=4.1.0,<4.2.0)", "social-auth-core[openidconnect,saml] (>=4.5.3,<4.6.0)"]
 ldap = ["django-auth-ldap (>=4.3.0,<4.4.0)"]
 mysql = ["mysqlclient (>=2.2.0,<2.3.0)"]
 napalm = ["napalm (>=4.1.0,<4.2.0)"]
 remote-storage = ["django-storages (>=1.13.2,<1.14.0)"]
-sso = ["social-auth-core[openidconnect,saml] (>=4.4.2,<4.5.0)"]
+sso = ["social-auth-core[openidconnect,saml] (>=4.5.3,<4.6.0)"]
 
 [[package]]
 name = "netaddr"
