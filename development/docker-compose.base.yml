@@ -1,12 +1,11 @@
 ---
 x-nautobot-build:
   &nautobot-build
-  build:
-    args:
-      NAUTOBOT_VER: "${NAUTOBOT_VER}"
-      PYTHON_VER: "${PYTHON_VER}"
-    context: "../"
-    dockerfile: "development/Dockerfile"
+  args:
+    NAUTOBOT_VER: "${NAUTOBOT_VER}"
+    PYTHON_VER: "${PYTHON_VER}"
+  context: "../"
+  dockerfile: "development/Dockerfile"
 x-nautobot-base:
   &nautobot-base
   image: "ansible-filters/nautobot:${NAUTOBOT_VER}-py${PYTHON_VER}"
@@ -15,7 +14,6 @@ x-nautobot-base:
     - "creds.env"
   tty: true
 
-version: "3.8"
 services:
   nautobot:
     depends_on:
@@ -23,7 +21,8 @@ services:
         condition: "service_started"
       db:
         condition: "service_healthy"
-    <<: *nautobot-build
+    build:
+      <<: *nautobot-build
     <<: *nautobot-base
   worker:
     entrypoint:
