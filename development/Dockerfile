@@ -13,7 +13,8 @@ ENV NAUTOBOT_ROOT ${NAUTOBOT_ROOT}
 WORKDIR $NAUTOBOT_ROOT
 
 # Configure poetry
-RUN pip install -U pip poetry \
+RUN pip install -U pip \
+    && curl -sSL https://install.python-poetry.org | python3 - \
     && poetry config virtualenvs.create false \
     && poetry config installer.parallel false
 
