@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nautobot-ansible-filters"
-version = "2.0.0"
+version = "2.0.2"
 description = "Nautobot App that provides Ansible filters within Nautobot."
 authors = ["Mikhail Yohman <mikhail.yohman@gmail.com>"]
 readme = "README.md"
