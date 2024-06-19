@@ -1,4 +1,5 @@
 """Store any utilities for plugin."""
+
 from jinja2_ansible_filters.core_filters import FilterModule
 
 
